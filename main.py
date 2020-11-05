@@ -15,6 +15,8 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 nltk.download('punkt')
+nltk.download('stopwords')
+nltk.download('wordnet')
 import plotly.express as px
 import plotly.graph_objects as go
 
