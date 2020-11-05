@@ -8,6 +8,7 @@ import pickle
 import re
 import string
 import nltk
+import sklearn
 from nltk.corpus import stopwords
 from nltk.stem.wordnet import WordNetLemmatizer
 import pandas as pd
