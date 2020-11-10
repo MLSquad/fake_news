@@ -15,9 +15,9 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-nltk.download('punkt')
-nltk.download('stopwords')
-nltk.download('wordnet')
+# nltk.download('punkt')
+# nltk.download('stopwords')
+# nltk.download('wordnet')
 import plotly.express as px
 import plotly.graph_objects as go
 
@@ -69,8 +69,8 @@ def Load_model():
 
 if __name__ == '__main__':
     st.title('Fake News Classification')
-    st.write("Classifier using the LTSM model")
-    st.info("LSTM model, tokeniser and the 6 traditional machine learning models loaded ")
+    # st.write("Classifier using a LTSM model")
+    # st.info("LSTM model, tokeniser and the 6 traditional machine learning models loaded ")
     st.subheader("Input the News content below")
     sentence = st.text_area("Enter your news content here", "Some news",height=200)
     predict_btt = st.button("predict")
@@ -112,23 +112,24 @@ if __name__ == '__main__':
             st.info("Your news content is rather abstract, The {} model predicts that there a almost equal {} probability that the news content is true compared to a {} probability of being fake".format(model_option,prediction[0][0]*100,prediction[0][1]*100))
         st.plotly_chart(fig, use_container_width=True)
 
-        st.header("Prediction using 6 traditional machine learning model")
-        predictions = []
-        for model in model_file_list:
-            filename = model
-            model = pickle.load(open(filename, "rb"))
-            prediction = model.predict([sentence])[0]
-            predictions.append(prediction)
+# Comparisons for other models
+        # st.header("Prediction using 6 traditional machine learning model")
+        # predictions = []
+        # for model in model_file_list:
+        #     filename = model
+        #     model = pickle.load(open(filename, "rb"))
+        #     prediction = model.predict([sentence])[0]
+        #     predictions.append(prediction)
 
-        dict_prediction = {"Models":model_list,"predictions":predictions}
-        df = pd.DataFrame(dict_prediction)
+        # dict_prediction = {"Models":model_list,"predictions":predictions}
+        # df = pd.DataFrame(dict_prediction)
 
-        num_values = df["predictions"].value_counts().tolist()
-        num_labels = df["predictions"].value_counts().keys().tolist()
+        # num_values = df["predictions"].value_counts().tolist()
+        # num_labels = df["predictions"].value_counts().keys().tolist()
 
-        dict_values = {"true/fake":num_labels,"values":num_values}
-        df_prediction = pd.DataFrame(dict_values)
-        fig = px.pie(df_prediction, values='values', names='true/fake')
-        fig.update_layout(title_text="Comparision between all 7 models: Prediction proportion between True/Fake")
-        st.plotly_chart(fig, use_container_width=True)
-        st.table(df)
+        # dict_values = {"true/fake":num_labels,"values":num_values}
+        # df_prediction = pd.DataFrame(dict_values)
+        # fig = px.pie(df_prediction, values='values', names='true/fake')
+        # fig.update_layout(title_text="Comparision between all 7 models: Prediction proportion between True/Fake")
+        # st.plotly_chart(fig, use_container_width=True)
+        # st.table(df)
