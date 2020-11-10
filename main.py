@@ -9,13 +9,13 @@ import re
 import string
 import nltk
 import sklearn
-from nltk.corpus import stopwords
+from nltk.corpus import stopwords, wordnet
 from nltk.stem.wordnet import WordNetLemmatizer
 import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-# nltk.download('punkt')
+nltk.download('punkt')
 # nltk.download('stopwords')
 # nltk.download('wordnet')
 import plotly.express as px
