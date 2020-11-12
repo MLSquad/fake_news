@@ -2,7 +2,7 @@
 An application for detecting fake news using a LSTM model
 
 ##  ⚡️ Demo
-![Demo](demo/FinalFake.gif)
+![Demo](Demo/FinalFake.gif)
 
 Live Demo available `https://share.streamlit.io/mlsquad/fake_news/main.py`  
 
