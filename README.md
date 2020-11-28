@@ -1,4 +1,4 @@
-# Fake News Classifier
+# Fake News Classifier [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/mlsquad/fake_news/main.py)
 An application for detecting fake news using a LSTM model
 
 ##  ⚡️ Demo
